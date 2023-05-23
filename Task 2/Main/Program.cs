@@ -20,15 +20,30 @@ public static class Program
 
         if (path is null) return;
 
-        var file = new File(path);
+        // Создание "экземпляра" абстрактного класса 
+        var file = File.GetInstance(path);
 
-        var method = typeof(File).GetMethod("Read",
-            BindingFlags.Instance | BindingFlags.NonPublic | BindingFlags.InvokeMethod);
+        if (file is null) return;
 
-        if (method?.Invoke(file, null) is not Task<string[]> task) return;
+        // Берем protected метод из экземпляра File
+        var readMethod = typeof(File).GetMethod("Read",
+            BindingFlags.Instance | BindingFlags.NonPublic);
+
+        // Вызов protected метода
+        if (readMethod?.Invoke(file, null) is not Task<string[]> task) return;
 
         var words = await task;
-        var pairs = new Words(words).GetSortedByCount();
+
+        var wordsInstance = new Words(words);
+
+        // Берем private метод из экземпляра Words
+        var getSortedByCountMethod = typeof(Words).GetMethod("GetSortedByCount",
+            BindingFlags.Instance | BindingFlags.NonPublic);
+
+        // Вызов private метода
+        if (getSortedByCountMethod?.Invoke(wordsInstance, null) is not IEnumerable<KeyValuePair<string, int>> pairs)
+            return;
+
         await File.Write(pairs);
     }
 }

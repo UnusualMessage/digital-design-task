@@ -9,7 +9,7 @@ public class Words
         Count(words);
     }
 
-    public IEnumerable<KeyValuePair<string, int>> GetSortedByCount()
+    private IEnumerable<KeyValuePair<string, int>> GetSortedByCount()
     {
         var pairs = _instance.ToList();
         pairs.Sort((firstPair, secondPair) => secondPair.Value.CompareTo(firstPair.Value));
@@ -19,15 +19,9 @@ public class Words
     private void Count(IEnumerable<string> words)
     {
         foreach (var word in words)
-        {
             if (_instance.ContainsKey(word))
-            {
                 _instance[word] += 1;
-            }
             else
-            {
                 _instance.Add(word, 1);
-            }
-        }
     }
 }
