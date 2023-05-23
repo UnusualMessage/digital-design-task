@@ -1,4 +1,8 @@
-﻿namespace Main;
+﻿using System.Reflection;
+using TextProcessor;
+using File = TextProcessor.File;
+
+namespace Main;
 
 public static class Program
 {
@@ -14,10 +18,17 @@ public static class Program
             Console.WriteLine("Параметры не заданы, берем книгу из ассетов");
         }
 
+        if (path is null) return;
+
         var file = new File(path);
-        
-        var words = await file.ReadFile();
-        var pairs = new WordsDictionary(words).GetSortedByCount();
-        await File.WriteFile(pairs);
+
+        var method = typeof(File).GetMethod("Read",
+            BindingFlags.Instance | BindingFlags.NonPublic | BindingFlags.InvokeMethod);
+
+        if (method?.Invoke(file, null) is not Task<string[]> task) return;
+
+        var words = await task;
+        var pairs = new Words(words).GetSortedByCount();
+        await File.Write(pairs);
     }
 }
