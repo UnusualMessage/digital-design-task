@@ -52,12 +52,12 @@ public abstract class File
         return result.Split(" ", StringSplitOptions.TrimEntries | StringSplitOptions.RemoveEmptyEntries);
     }
 
-    public static async Task Write(IEnumerable<KeyValuePair<string, int>> pairs)
+    public static async Task Write(IEnumerable<KeyValuePair<string, int>> pairs, string name = "./output.txt")
     {
         var output = new StringBuilder();
         foreach (var pair in pairs) output.Append($"{pair.Key}\t{pair.Value}\n");
 
-        await using var writer = new StreamWriter("./output.txt");
+        await using var writer = new StreamWriter(name);
         await writer.WriteAsync(output);
     }
 }

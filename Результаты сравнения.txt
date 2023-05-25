@@ -1,0 +1,25 @@
+"C:\Program Files\JetBrains\JetBrains Rider 2022.2.2\plugins\dpa\DotFiles\JetBrains.DPA.Runner.exe" --handle=4388 --backend-pid=13796 --etw-collect-flags=3 --detach-event-name=dpa.detach.4388 "C:/dev/web/digital-design-task/Task 2/Main/bin/Debug/net7.0/Main.exe"
+Параметры не заданы, берем книгу из ассетов
+
+Обычный способ - 382 мс
+Многопоточный способ - 61 мс
+
+Process finished with exit code 0.
+
+
+"C:\Program Files\JetBrains\JetBrains Rider 2022.2.2\plugins\dpa\DotFiles\JetBrains.DPA.Runner.exe" --handle=3660 --backend-pid=13796 --etw-collect-flags=3 --detach-event-name=dpa.detach.3660 "C:/dev/web/digital-design-task/Task 2/Main/bin/Debug/net7.0/Main.exe"
+Параметры не заданы, берем книгу из ассетов
+
+Обычный способ - 378 мс
+Многопоточный способ - 62 мс
+
+Process finished with exit code 0.
+
+
+"C:\Program Files\JetBrains\JetBrains Rider 2022.2.2\plugins\dpa\DotFiles\JetBrains.DPA.Runner.exe" --handle=16088 --backend-pid=13796 --etw-collect-flags=3 --detach-event-name=dpa.detach.16088 "C:/dev/web/digital-design-task/Task 2/Main/bin/Debug/net7.0/Main.exe"
+Параметры не заданы, берем книгу из ассетов
+
+Обычный способ - 382 мс
+Многопоточный способ - 62 мс
+
+Process finished with exit code 0.

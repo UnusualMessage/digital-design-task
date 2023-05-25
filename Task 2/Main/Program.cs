@@ -25,25 +25,35 @@ public static class Program
 
         if (file is null) return;
 
-        // Берем protected метод из экземпляра File
+        // Берем protected метод Read из экземпляра File
         var readMethod = typeof(File).GetMethod("Read",
             BindingFlags.Instance | BindingFlags.NonPublic);
-
-        // Вызов protected метода
+        // Вызов Read
         if (readMethod?.Invoke(file, null) is not Task<string[]> task) return;
 
         var words = await task;
 
-        var wordsInstance = new Words(words);
+        var slowInstance = new Words();
+        // Берем private метод CountSlow из Words
+        var countSlowMethod = typeof(Words).GetMethod("CountSlow", BindingFlags.Instance | BindingFlags.NonPublic);
+        // Вызов CountSlow
+        countSlowMethod?.Invoke(slowInstance, new object[] { words });
 
-        // Берем private метод из экземпляра Words
+        var fastInstance = new Words();
+        fastInstance.CountFast(words);
+
+        // Берем private метод GetSortedByCount из экземпляра Words
         var getSortedByCountMethod = typeof(Words).GetMethod("GetSortedByCount",
             BindingFlags.Instance | BindingFlags.NonPublic);
-
-        // Вызов private метода
-        if (getSortedByCountMethod?.Invoke(wordsInstance, null) is not IEnumerable<KeyValuePair<string, int>> pairs)
+        // Вызов GetSortedByCount
+        if (getSortedByCountMethod?.Invoke(slowInstance, null) is not IEnumerable<KeyValuePair<string, int>> slowPairs)
             return;
 
-        await File.Write(pairs);
+        // Вызов GetSortedByCount
+        if (getSortedByCountMethod?.Invoke(fastInstance, null) is not IEnumerable<KeyValuePair<string, int>> fastPairs)
+            return;
+
+        await File.Write(slowPairs, "slow.txt");
+        await File.Write(fastPairs, "fast.txt");
     }
 }

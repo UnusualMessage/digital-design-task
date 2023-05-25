@@ -1,13 +1,11 @@
-﻿namespace TextProcessor;
+﻿using System.Collections.Concurrent;
+using System.Diagnostics;
+
+namespace TextProcessor;
 
 public class Words
 {
-    private readonly Dictionary<string, int> _instance = new();
-
-    public Words(IEnumerable<string> words)
-    {
-        Count(words);
-    }
+    private readonly ConcurrentDictionary<string, int> _instance = new();
 
     private IEnumerable<KeyValuePair<string, int>> GetSortedByCount()
     {
@@ -16,12 +14,37 @@ public class Words
         return pairs;
     }
 
-    private void Count(IEnumerable<string> words)
+    public void CountFast(IEnumerable<string> words)
     {
+        var stopWatch = new Stopwatch();
+
+        stopWatch.Start();
+        Parallel.ForEach(words, word =>
+        {
+            _instance.AddOrUpdate(
+                word,
+                _ => 1,
+                (_, currentValue) => currentValue + 1);
+        });
+        stopWatch.Stop();
+
+        Console.WriteLine($"Многопоточный способ - {stopWatch.ElapsedMilliseconds} мс");
+    }
+
+    private void CountSlow(IEnumerable<string> words)
+    {
+        var stopWatch = new Stopwatch();
+
+        stopWatch.Start();
+
         foreach (var word in words)
-            if (_instance.ContainsKey(word))
-                _instance[word] += 1;
-            else
-                _instance.Add(word, 1);
+            _instance.AddOrUpdate(
+                word,
+                _ => 1,
+                (_, currentValue) => currentValue + 1);
+
+        stopWatch.Stop();
+
+        Console.WriteLine($"Обычный способ - {stopWatch.ElapsedMilliseconds} мс");
     }
 }
