@@ -44,14 +44,6 @@ public abstract class File
         return instance as File;
     }
 
-    protected async Task<string[]> Read()
-    {
-        using var reader = new StreamReader(_path);
-        var result = await reader.ReadToEndAsync();
-
-        return result.Split(" ", StringSplitOptions.TrimEntries | StringSplitOptions.RemoveEmptyEntries);
-    }
-
     public static async Task Write(IEnumerable<KeyValuePair<string, int>> pairs, string name = "./output.txt")
     {
         var output = new StringBuilder();
@@ -59,5 +51,20 @@ public abstract class File
 
         await using var writer = new StreamWriter(name);
         await writer.WriteAsync(output);
+    }
+
+    public async Task<string> ReadText()
+    {
+        using var reader = new StreamReader(_path);
+        var result = await reader.ReadToEndAsync();
+        return result;
+    }
+
+    protected async Task<string[]> Read()
+    {
+        using var reader = new StreamReader(_path);
+        var result = await reader.ReadToEndAsync();
+
+        return result.Split(" ", StringSplitOptions.TrimEntries | StringSplitOptions.RemoveEmptyEntries);
     }
 }

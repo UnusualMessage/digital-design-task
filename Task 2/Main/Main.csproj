@@ -14,7 +14,8 @@
     </ItemGroup>
 
     <ItemGroup>
-        <ProjectReference Include="..\TextProcessor\TextProcessor.csproj"/>
+        <ProjectReference Include="..\TextProcessor\TextProcessor.csproj" />
+        <ProjectReference Include="..\WebAPI\WebAPI.csproj" />
     </ItemGroup>
 
 </Project>

@@ -14,6 +14,13 @@ public class Words
         return pairs;
     }
 
+    public static IEnumerable<KeyValuePair<string, int>> GetSortedByCount(Dictionary<string, int> words)
+    {
+        var pairs = words.ToList();
+        pairs.Sort((firstPair, secondPair) => secondPair.Value.CompareTo(firstPair.Value));
+        return pairs;
+    }
+
     public void CountFast(IEnumerable<string> words)
     {
         var stopWatch = new Stopwatch();
