@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#000000">
+    <meta
+            name="description"
+            content="Задание"
+    >
+    <link rel="stylesheet" href="styles/index.css">
+    <link rel="stylesheet" href="styles/main/image.css">
+    <link rel="stylesheet" href="styles/main/comment.css">
+    <link rel="stylesheet" href="styles/main/description.css">
+    <link rel="stylesheet" href="styles/main/links.css">
+    <link rel="stylesheet" href="styles/header/header.css">
+    <link rel="stylesheet" href="styles/footer/footer.css">
+
+    <title>Задание</title>
+</head>
+<body>
+    <div class="root">
+        <header class="root-wrapper header-title">
+            <h1 class="title-text">Язык программирования JavaScript</h1>
+        </header>
+
+        <main class="root-wrapper">
+            <article class="title-image">
+                <img class="image" src="assets/images/js.jpg" alt="Изображение с языком JavaScript">
+            </article>
+
+            <article class="description">
+                <div class="description-block">
+                    <h3 class="description-block-title title">Описание</h3>
+                    <p class="description-block-text text">Javascript – динамический скриптовый язык программирования высокого уровня. Он отличается мультипарадигменностью. Речь идет о поддержке функционального, императивного, событийно-ориентированного стилей. Чаще всего язык используется для создания интерактивных веб-страниц и приложений.</p>
+                </div>
+
+                <div class="description-block">
+                    <h3 class="description-block-title title">Сферы применения</h3>
+                    <ol class="description-block-list list">
+                        <li class="description-block-text text">
+                            <p>
+                                <strong>Веб-сайты и веб-приложения.</strong>
+                                Самая популярная область применения языка JavaScript — это написание кода для сайта. Практически на каждом современном сайте используют код, написанный на JS.
+                            </p>
+                        </li>
+                        <li class="description-block-text text">
+                            <p>
+                                <strong>Расширения для браузера.</strong>
+                                Небольшие простые скрипты, которые добавляют дополнительный функционал — блокируют рекламу, позволяют сохранять аудио, отправляют уведомления о новых письмах или меняют цветовую схему сайта.
+                            </p>
+                        </li>
+                        <li class="description-block-text text">
+                            <p>
+                                <strong>Мобильные приложения.</strong>
+                                Их можно писать на специальных языках, например Kotlin. Но если нужно что-то простое, например интерфейс для работы с облачным хранилищем, его можно написать на JavaScript и собрать в приложение с помощью специальных инструментов.
+                            </p>
+                        </li>
+
+                        <li class="description-block-text text">
+                            <p>
+                                <strong>Серверная часть сайтов и программ.</strong>
+                                Язык программирования JavaScript можно использовать для написания любых сервисов: чатов, компьютерных программ и даже нейросетей. Для этого к нему нужно подключить движок Node.js.
+                            </p>
+                        </li>
+                    </ol>
+                </div>
+
+                <div class="description-block">
+                    <h3 class="description-block-title title">Достоинства</h3>
+                    <ul class="description-block-list list">
+                        <li class="description-block-text text">Незаменимость для веб-разработки.</li>
+                        <li class="description-block-text text">Скорость работы и производительность.</li>
+                        <li class="description-block-text text">Мощная инфраструктура (экосистема).</li>
+                        <li class="description-block-text text">Простота и рациональность применения.</li>
+                        <li class="description-block-text text">Лёгкость освоения.</li>
+                    </ul>
+                </div>
+
+                <div class="description-block">
+                    <h3 class="description-block-title title">Недостатки</h3>
+                    <ul class="description-block-list list">
+                        <li class="description-block-text text">Нестрогая типизация и вольная трактовка.</li>
+                        <li class="description-block-text text">Доступность для злоумышленников.</li>
+                        <li class="description-block-text text">Не до конца проработанный стандарт языка.</li>
+                    </ul>
+                </div>
+            </article>
+
+            <article class="links">
+                <h3 class="links-block-title title"><mark>Полезные материалы</mark></h3>
+                <ul class="list">
+                    <li class="links-block-text text">
+                        <a class="useful-link"  href="https://learn.javascript.ru/">JavaScript.ru - учебник для изучения языка JS.</a>
+                    </li>
+
+                    <li class="links-block-text text">
+                        <a class="useful-link" href="https://codesandbox.io/">CodeSandbox - облачная IDE.</a>
+                    </li>
+
+                    <li class="links-block-text text">
+                        <a class="useful-link" href="https://www.typescriptlang.org/">TypeScript - расширение JavaScript, вводящее явную типизацию.</a>
+                    </li>
+
+                    <li class="links-block-text text">
+                        <a class="useful-link" href="https://www.developerway.com/">Полезный материал для более глубокого изучения React.</a>
+                    </li>
+                </ul>
+            </article>
+
+            <article class="comment">
+                <h3 class="comment-block-title title">Оцените статью!</h3>
+                <form class="comment-form" method="post" action="http://localhost:5000/comment">
+                    <div class="form-input">
+                        <label class="form-input-label text" for="mail">Почта</label>
+                        <input class="form-input-field" id="mail" name="mail" type="text">
+                    </div>
+
+                    <div class="form-input">
+                        <label class="form-input-label text" for="name">Имя</label>
+                        <input class="form-input-field" id="name" name="name" type="text">
+                    </div>
+
+                    <div class="form-input">
+                        <label class="form-input-label text" for="text">Комментарий</label>
+                        <textarea class="form-input-field" id="text" name="text" rows="10"></textarea>
+                    </div>
+
+                    <div class="form-inputs">
+                        <div class="form-input-radio">
+                            <div class="form-input-radio-choice">
+                                <input class="form-input-field" id="male" type="radio" name="sex" value="Мужчина">
+                                <label class="form-input-label text" for="male">Мужчина</label>
+                            </div>
+
+                            <div class="form-input-radio-choice">
+                                <input class="form-input-field" id="female" type="radio" name="sex" value="Женщина">
+                                <label class="form-input-label text" for="female">Женщина</label>
+                            </div>
+                        </div>
+
+                        <div class="form-input-checkbox">
+                            <input class="form-input-field" id="is-programmer" type="checkbox" name="isProgrammer">
+                            <label class="form-input-label text" for="is-programmer">Программист?</label>
+                        </div>
+                    </div>
+
+                    <div class="form-input">
+                        <label class="form-input-label text" for="score">Оценка статье</label>
+                        <select class="form-input-field" id="score" name="score">
+                            <option value="1">Ужасно</option>
+                            <option value="2">Плохо</option>
+                            <option value="3">Нормально</option>
+                            <option value="4">Хорошо</option>
+                            <option value="5" selected>Отлично</option>
+                        </select>
+                    </div>
+
+                    <div class="form-buttons">
+                        <button class="form-button" type="submit">Отправить</button>
+                        <button class="form-button">Очистить</button>
+                    </div>
+                </form>
+            </article>
+        </main>
+
+        <footer class="root-wrapper footer">
+            <span class="footer-text text">© 2023 Котенко Никита</span>
+        </footer>
+    </div>
+
+</body>
+</html>

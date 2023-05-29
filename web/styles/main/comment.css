@@ -1,0 +1,66 @@
+.comment {
+    margin-top: 20px;
+}
+
+.comment-form {
+    display: flex;
+    flex-direction: column;
+
+    gap: 20px;
+}
+
+.form-input {
+    display: flex;
+    flex-direction: column;
+}
+
+.form-input-field {
+    padding: 5px;
+    font-size: 16px;
+}
+
+.form-input-label:after {
+    content: ":"
+}
+
+.form-input-radio {
+    display: flex;
+    flex-direction: column;
+}
+
+.form-input-radio .form-input-label:after {
+    content: ""
+}
+
+.form-input-checkbox {
+    display: flex;
+    gap: 5px;
+}
+
+.form-input-checkbox .form-input-label:after {
+    content: ""
+}
+
+.form-inputs {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+    flex-wrap: wrap;
+}
+
+.form-button {
+    padding: 5px;
+    font-size: 16px;
+    background-color: white;
+    border: 1px solid black;
+}
+
+.form-button:hover {
+    background-color: #fafafa;
+    border: 1px solid black;
+}
+
+.form-buttons {
+    display: flex;
+    gap: 10px;
+}

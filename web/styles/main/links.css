@@ -1,0 +1,12 @@
+.links {
+    margin-top: 20px;
+}
+
+.useful-link {
+    text-decoration: none;
+    color: #666666;
+}
+
+.useful-link:hover {
+    color: black;
+}
