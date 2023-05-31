@@ -1,5 +1,21 @@
 .header-title {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
     margin-top: 20px;
+}
+
+.numbers-api {
+    border: 5px solid black;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    padding: 10px;
+}
+
+.numbers-api-button {
+    width: 100px;
 }
 
 @media screen and (max-width: 768px) {

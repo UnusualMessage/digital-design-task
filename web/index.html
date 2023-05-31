@@ -9,18 +9,29 @@
             content="Задание"
     >
     <link rel="stylesheet" href="styles/index.css">
-    <link rel="stylesheet" href="styles/main/image.css">
-    <link rel="stylesheet" href="styles/main/comment.css">
-    <link rel="stylesheet" href="styles/main/description.css">
-    <link rel="stylesheet" href="styles/main/links.css">
-    <link rel="stylesheet" href="styles/header/header.css">
-    <link rel="stylesheet" href="styles/footer/footer.css">
 
     <title>Задание</title>
 </head>
 <body>
     <div class="root">
         <header class="root-wrapper header-title">
+            <form class="numbers-api">
+                <h3 class="numbers-api-title title">Интересные факты о числах и датах</h3>
+
+                <div class="form-input">
+                    <label for="type"></label>
+                    <select class="text form-input-field numbers-api-select" id="type" name="type">
+                        <option class="text" value="date" selected>Дата</option>
+                        <option class="text" value="year">Год</option>
+                        <option class="text" value="trivia">Обычный</option>
+                        <option class="text" value="math">Математика</option>
+                    </select>
+                </div>
+
+                <button class="form-button numbers-api-button text" type="submit">Обновить</button>
+                <p class="numbers-api-text text"></p>
+            </form>
+
             <h1 class="title-text">JavaScript и библиотека React</h1>
         </header>
 
@@ -292,5 +303,6 @@
         </footer>
     </div>
 
+<script src="index.js" type="module"></script>
 </body>
 </html>

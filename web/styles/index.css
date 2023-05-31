@@ -1,3 +1,10 @@
+@import "./footer/footer.css";
+@import "./header/header.css";
+@import "./main/description.css";
+@import "./main/comment.css";
+@import "./main/image.css";
+@import "./main/links.css";
+
 :root {
     --big: 1200px;
     --pre-big: 992px;
