@@ -313,6 +313,7 @@
                                         name="sex"
                                         label="Мужчина"
                                         value="male"
+                                        current={this.state.sex}
                                         id={`${this.props.name}-male`}
                                         change={this.change}
                                         checked
@@ -322,6 +323,7 @@
                                         name="sex"
                                         label="Женщина"
                                         value="female"
+                                        current={this.state.sex}
                                         id={`${this.props.name}-female`}
                                         change={this.change}
                                     />
@@ -344,7 +346,11 @@
                                 value={this.state.score}
                             >
                                 {
-                                    this.options.map((option, i) => <option {...option} key={i}>{option.label}</option>)
+                                    this.options.map((option, i) =>
+                                        <option {...option} key={`${this.props.name}-option-${i}`}>
+                                            {option.label}
+                                        </option>
+                                    )
                                 }
                             </FormSelectInput>
 
@@ -420,6 +426,7 @@
                             value={this.props.value}
                             id={this.props.id}
                             name={this.props.name}
+                            checked={this.props.value === this.props.current}
                             defaultChecked={this.props.checked}
                         />
                         <label className="form-input-label text" htmlFor={this.props.id}>{this.props.label}</label>
@@ -461,7 +468,7 @@
                         <label className="form-input-label text" htmlFor={this.props.id}>{this.props.label}</label>
                         <select
                             className="form-input-field"
-                            id={this.props.name}
+                            id={this.props.id}
                             name={this.props.name}
                             onChange={this.onChange}
                             value={this.props.value}
