@@ -10,6 +10,10 @@
     >
     <link rel="stylesheet" href="styles/index.css">
 
+    <script crossorigin src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
+    <script crossorigin src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+
     <title>Задание</title>
 </head>
 <body>
@@ -118,59 +122,7 @@
                     </ul>
                 </article>
 
-                <article class="comment">
-                    <h3 class="comment-block-title title">Оцените колонку статьи!</h3>
-                    <form class="comment-form" method="post" action="http://localhost:5000/comment/js">
-                        <div class="form-input">
-                            <label class="form-input-label text" for="js-mail">Почта</label>
-                            <input class="form-input-field" id="js-mail" name="js-mail" type="text">
-                        </div>
-
-                        <div class="form-input">
-                            <label class="form-input-label text" for="js-name">Имя</label>
-                            <input class="form-input-field" id="js-name" name="js-name" type="text" required>
-                        </div>
-
-                        <div class="form-input">
-                            <label class="form-input-label text" for="js-text">Комментарий</label>
-                            <textarea class="form-input-field" id="js-text" name="js-text" rows="10"></textarea>
-                        </div>
-
-                        <div class="form-inputs">
-                            <div class="form-input-radio">
-                                <div class="form-input-radio-choice">
-                                    <input class="form-input-field" checked id="js-male" type="radio" name="js-sex" value="Мужчина">
-                                    <label class="form-input-label text" for="js-male">Мужчина</label>
-                                </div>
-
-                                <div class="form-input-radio-choice">
-                                    <input class="form-input-field" id="js-female" type="radio" name="js-sex" value="Женщина">
-                                    <label class="form-input-label text" for="js-female">Женщина</label>
-                                </div>
-                            </div>
-
-                            <div class="form-input-checkbox">
-                                <input class="form-input-field" id="js-is-programmer" type="checkbox" name="js-isProgrammer">
-                                <label class="form-input-label text" for="js-is-programmer">Программист?</label>
-                            </div>
-                        </div>
-
-                        <div class="form-input">
-                            <label class="form-input-label text" for="js-score">Оценка</label>
-                            <select class="form-input-field" id="js-score" name="js-score">
-                                <option value="1">Ужасно</option>
-                                <option value="2">Плохо</option>
-                                <option value="3">Нормально</option>
-                                <option value="4">Хорошо</option>
-                                <option value="5" selected>Отлично</option>
-                            </select>
-                        </div>
-
-                        <div class="form-buttons">
-                            <button class="form-button" type="submit">Отправить</button>
-                            <button class="form-button">Очистить</button>
-                        </div>
-                    </form>
+                <article class="comment js-comment">
                 </article>
             </div>
 
@@ -243,59 +195,7 @@
                     </ul>
                 </article>
 
-                <article class="comment">
-                    <h3 class="comment-block-title title">Оцените колонку статьи!</h3>
-                    <form class="comment-form" method="post" action="http://localhost:5000/comment/react">
-                        <div class="form-input">
-                            <label class="form-input-label text" for="react-mail">Почта</label>
-                            <input class="form-input-field" id="react-mail" name="react-mail" type="text">
-                        </div>
-
-                        <div class="form-input">
-                            <label class="form-input-label text" for="react-name">Имя</label>
-                            <input class="form-input-field" id="react-name" name="react-name" type="text" required>
-                        </div>
-
-                        <div class="form-input">
-                            <label class="form-input-label text" for="react-text">Комментарий</label>
-                            <textarea class="form-input-field" id="react-text" name="react-text" rows="10"></textarea>
-                        </div>
-
-                        <div class="form-inputs">
-                            <div class="form-input-radio">
-                                <div class="form-input-radio-choice">
-                                    <input class="form-input-field" checked id="react-male" type="radio" name="react-sex" value="Мужчина">
-                                    <label class="form-input-label text" for="react-male">Мужчина</label>
-                                </div>
-
-                                <div class="form-input-radio-choice">
-                                    <input class="form-input-field" id="react-female" type="radio" name="react-sex" value="Женщина">
-                                    <label class="form-input-label text" for="react-female">Женщина</label>
-                                </div>
-                            </div>
-
-                            <div class="form-input-checkbox">
-                                <input class="form-input-field" id="react-is-programmer" type="checkbox" name="react-isProgrammer">
-                                <label class="form-input-label text" for="react-is-programmer">Программист?</label>
-                            </div>
-                        </div>
-
-                        <div class="form-input">
-                            <label class="form-input-label text" for="react-score">Оценка</label>
-                            <select class="form-input-field" id="react-score" name="react-score">
-                                <option value="1">Ужасно</option>
-                                <option value="2">Плохо</option>
-                                <option value="3">Нормально</option>
-                                <option value="4">Хорошо</option>
-                                <option value="5" selected>Отлично</option>
-                            </select>
-                        </div>
-
-                        <div class="form-buttons">
-                            <button class="form-button" type="submit">Отправить</button>
-                            <button class="form-button">Очистить</button>
-                        </div>
-                    </form>
+                <article class="comment react-comment">
                 </article>
             </div>
         </main>
@@ -305,6 +205,276 @@
         </footer>
     </div>
 
-<script src="index.js"></script>
+    <script src="scripts/index.js" ></script>
+    <script type="text/babel">
+        class CommentForm extends React.Component {
+            constructor() {
+                super();
+
+                this.options = [
+                    {
+                        value: 1,
+                        label: "Ужасно"
+                    },
+
+                    {
+                        value: 2,
+                        label: "Плохо"
+                    },
+
+                    {
+                        value: 3,
+                        label: "Нормально"
+                    },
+
+                    {
+                        value: 4,
+                        label: "Хорошо"
+                    },
+
+                    {
+                        value: 5,
+                        label: "Отлично"
+                    }
+                ];
+
+                const defaultState = {
+                    mail: "",
+                    name: "",
+                    text: "",
+                    isProgrammer: false,
+                    sex: "male",
+                    score: 5
+                }
+
+                this.state = {...defaultState}
+                this.defaultState = defaultState;
+            }
+
+            clear = () => {
+                this.setState({
+                    ...this.defaultState
+                })
+            }
+
+            change = (name, value) => {
+                this.setState({
+                    [name]: value
+                })
+            }
+
+            onSubmit = (event) => {
+                event.preventDefault();
+
+                const text = `Колонка статьи: ${this.props.name}\n` +
+                    `Имя: ${this.state.name}\n` +
+                    `Почта: ${this.state.mail}\n` +
+                    `Программист???: ${this.state.isProgrammer}\n` +
+                    `Пол: ${this.state.sex}\n` +
+                    `Оценка: ${this.state.score}\n` +
+                    `Комментарий: ${this.state.text}\n`;
+
+                alert(text);
+            }
+
+            render() {
+                return (
+                    <>
+                        <h3 className="comment-block-title title">Оцените колонку статьи!</h3>
+                        <form className={`form ${this.props.name}-comment-form`} onSubmit={this.onSubmit}>
+                            <FormTextInput
+                                label="Почта"
+                                name="mail"
+                                id={`${this.props.name}-mail`}
+                                change={this.change}
+                                value={this.state.mail}
+                            />
+
+                            <FormTextInput
+                                label="Имя"
+                                name="name"
+                                id={`${this.props.name}-name`}
+                                change={this.change}
+                                value={this.state.name}
+                            />
+
+                            <FormTextInput
+                                textArea
+                                label="Комментарий"
+                                name="text"
+                                id={`${this.props.name}-text`}
+                                change={this.change}
+                                value={this.state.text}
+                            />
+
+                            <div className="form-inputs">
+                                <FormRadioGroup>
+                                    <FormRadioInput
+                                        name="sex"
+                                        label="Мужчина"
+                                        value="male"
+                                        id={`${this.props.name}-male`}
+                                        change={this.change}
+                                        checked
+                                    />
+
+                                    <FormRadioInput
+                                        name="sex"
+                                        label="Женщина"
+                                        value="female"
+                                        id={`${this.props.name}-female`}
+                                        change={this.change}
+                                    />
+                                </FormRadioGroup>
+
+                                <FormCheckboxInput
+                                    name="isProgrammer"
+                                    label="Программист?"
+                                    id={`${this.props.name}-is-programmer`}
+                                    change={this.change}
+                                    value={this.state.isProgrammer}
+                                />
+                            </div>
+
+                            <FormSelectInput
+                                name="score"
+                                label="Оценка"
+                                id={`${this.props.name}-score`}
+                                change={this.change}
+                                value={this.state.score}
+                            >
+                                {
+                                    this.options.map((option, i) => <option {...option} key={i}>{option.label}</option>)
+                                }
+                            </FormSelectInput>
+
+                            <div className="form-buttons">
+                                <button className="form-button" type="submit">Отправить</button>
+                                <button className="form-button" type="button" onClick={this.clear}>Очистить</button>
+                            </div>
+                        </form>
+                    </>
+                );
+            }
+        }
+
+        class FormTextInput extends React.Component {
+            onChange = (event) => {
+                this.props.change(this.props.name, event.target.value);
+            }
+
+            render() {
+                return (
+                    <div className="form-input">
+                        <label className="form-input-label text" htmlFor={this.props.id}>{this.props.label}</label>
+                        {
+                            this.props.textArea
+                                ?
+                                <textarea
+                                    className="form-input-field"
+                                    id={this.props.id}
+                                    name={this.props.name}
+                                    onChange={this.onChange}
+                                    value={this.props.value}
+                                    rows="10"
+                                ></textarea>
+                                :
+                                <input
+                                    className="form-input-field"
+                                    type="text"
+                                    id={this.props.id}
+                                    name={this.props.name}
+                                    onChange={this.onChange}
+                                    value={this.props.value}
+                                />
+                        }
+                    </div>
+                );
+            }
+        }
+
+        class FormRadioGroup extends React.Component {
+            render() {
+                return (
+                    <div className="form-input-radio">
+                        {
+                            this.props.children
+                        }
+                    </div>
+                );
+            }
+        }
+
+        class FormRadioInput extends React.Component {
+            onChange = (event) => {
+                this.props.change(this.props.name, event.target.value);
+            }
+
+            render() {
+                return (
+                    <div className="form-input-radio-choice">
+                        <input
+                            className="form-input-field"
+                            type="radio"
+                            onChange={this.onChange}
+                            value={this.props.value}
+                            id={this.props.id}
+                            name={this.props.name}
+                            defaultChecked={this.props.checked}
+                        />
+                        <label className="form-input-label text" htmlFor={this.props.id}>{this.props.label}</label>
+                    </div>
+                );
+            }
+        }
+
+        class FormCheckboxInput extends React.Component {
+            onChange = (event) => {
+                this.props.change(this.props.name, event.target.checked);
+            }
+
+            render() {
+                return (
+                    <div className="form-input-checkbox">
+                        <input
+                            className="form-input-field"
+                            type="checkbox"
+                            id={this.props.id}
+                            name={this.props.name}
+                            onChange={this.onChange}
+                            checked={this.props.value}
+                        />
+                        <label className="form-input-label text" htmlFor={this.props.id}>{this.props.label}</label>
+                    </div>
+                );
+            }
+        }
+
+        class FormSelectInput extends React.Component {
+            onChange = (event) => {
+                this.props.change(this.props.name, event.target.value);
+            }
+
+            render() {
+                return (
+                    <div className="form-input">
+                        <label className="form-input-label text" htmlFor={this.props.id}>{this.props.label}</label>
+                        <select
+                            className="form-input-field"
+                            id={this.props.name}
+                            name={this.props.name}
+                            onChange={this.onChange}
+                            value={this.props.value}
+                        >
+                            {this.props.children}
+                        </select>
+                    </div>
+                );
+            }
+        }
+
+        ReactDOM.render(<CommentForm name={"react"}/>, document.querySelector(".react-comment"));
+        ReactDOM.render(<CommentForm name={"js"}/>, document.querySelector(".js-comment"));
+    </script>
 </body>
 </html>
